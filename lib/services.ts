@@ -101,10 +101,16 @@ export type PageService = {
   keywords: string[]
 }
 
+export const cities = {
+  bc: { name: "Balneário Camboriú", state: "SC", slug: "balneario-camboriu" },
+  apu: { name: "Apucarana", state: "PR", slug: "apucarana" },
+}
+
 export const servicePages: PageService[] = [
+  // ── impermeabilizacao-pisos ──────────────────────────────────────
   {
     service: services[0],
-    city: { name: "Balneário Camboriú", state: "SC", slug: "balneario-camboriu" },
+    city: cities.bc,
     title: "Impermeabilização de Pisos em Balneário Camboriú",
     metaTitle: "Impermeabilização de Pisos e Pedras em Balneário Camboriú SC | FA Limpeza",
     metaDescription:
@@ -119,7 +125,7 @@ export const servicePages: PageService[] = [
   },
   {
     service: services[0],
-    city: { name: "Apucarana", state: "PR", slug: "apucarana" },
+    city: cities.apu,
     title: "Impermeabilização de Pisos em Apucarana",
     metaTitle: "Impermeabilização de Pisos e Pedras em Apucarana PR | FA Limpeza",
     metaDescription:
@@ -132,9 +138,10 @@ export const servicePages: PageService[] = [
       "limpeza porcelanato Apucarana PR",
     ],
   },
+  // ── limpeza-pos-obra ─────────────────────────────────────────────
   {
     service: services[1],
-    city: { name: "Balneário Camboriú", state: "SC", slug: "balneario-camboriu" },
+    city: cities.bc,
     title: "Limpeza Pós-Obra em Balneário Camboriú",
     metaTitle: "Limpeza Pós-Obra em Balneário Camboriú SC | FA Limpeza Profissional",
     metaDescription:
@@ -149,7 +156,7 @@ export const servicePages: PageService[] = [
   },
   {
     service: services[1],
-    city: { name: "Apucarana", state: "PR", slug: "apucarana" },
+    city: cities.apu,
     title: "Limpeza Pós-Obra em Apucarana",
     metaTitle: "Limpeza Pós-Obra em Apucarana PR | FA Limpeza Profissional",
     metaDescription:
@@ -159,6 +166,163 @@ export const servicePages: PageService[] = [
       "limpeza pós obra Apucarana",
       "limpeza obra Apucarana PR",
       "limpeza entrega obra Apucarana",
+      "faxina pós obra Apucarana PR",
+    ],
+  },
+  // ── lapidacao-piso-usinado ───────────────────────────────────────
+  {
+    service: services[2],
+    city: cities.bc,
+    title: "Lapidação de Piso Usinado em Balneário Camboriú",
+    metaTitle: "Lapidação de Piso Usinado em Balneário Camboriú SC | FA Limpeza",
+    metaDescription:
+      "Recupere o brilho do seu piso usinado em Balneário Camboriú SC. Lapidação técnica com resultado comparável ao piso novo. Atendemos hotéis, condomínios e alto padrão. Orçamento grátis.",
+    h1: "Lapidação de Piso Usinado em Balneário Camboriú, SC",
+    keywords: [
+      "lapidação piso usinado Balneário Camboriú",
+      "polimento piso BC SC",
+      "restauração piso usinado Balneário Camboriú",
+      "lustração piso BC",
+    ],
+  },
+  {
+    service: services[2],
+    city: cities.apu,
+    title: "Lapidação de Piso Usinado em Apucarana",
+    metaTitle: "Lapidação de Piso Usinado em Apucarana PR | FA Limpeza",
+    metaDescription:
+      "Lapidação e polimento de pisos usinados em Apucarana PR. Recupere o brilho original com processo técnico especializado. Condomínios e residências. Orçamento sem compromisso.",
+    h1: "Lapidação de Piso Usinado em Apucarana, PR",
+    keywords: [
+      "lapidação piso usinado Apucarana",
+      "polimento piso Apucarana PR",
+      "restauração piso usinado Apucarana",
+      "lustração piso Apucarana",
+    ],
+  },
+  // ── impermeabilizacao-telhados ───────────────────────────────────
+  {
+    service: services[3],
+    city: cities.bc,
+    title: "Impermeabilização de Telhados em Balneário Camboriú",
+    metaTitle: "Impermeabilização de Telhados em Balneário Camboriú SC | FA Limpeza",
+    metaDescription:
+      "Impermeabilização técnica de telhados em Balneário Camboriú SC. Elimina infiltrações em telhas cerâmicas, fibrocimento e lajes. Ideal para condomínios e hotéis. Orçamento grátis.",
+    h1: "Impermeabilização de Telhados em Balneário Camboriú, SC",
+    keywords: [
+      "impermeabilização telhado Balneário Camboriú",
+      "impermeabilizar telha BC SC",
+      "infiltração telhado Balneário Camboriú",
+      "impermeabilização laje BC",
+    ],
+  },
+  {
+    service: services[3],
+    city: cities.apu,
+    title: "Impermeabilização de Telhados em Apucarana",
+    metaTitle: "Impermeabilização de Telhados em Apucarana PR | FA Limpeza",
+    metaDescription:
+      "Impermeabilização técnica de telhados em Apucarana PR. Resolve infiltrações em telhas cerâmicas, fibrocimento e lajes com aplicação especializada. Orçamento sem compromisso.",
+    h1: "Impermeabilização de Telhados em Apucarana, PR",
+    keywords: [
+      "impermeabilização telhado Apucarana",
+      "impermeabilizar telha Apucarana PR",
+      "infiltração telhado Apucarana",
+      "impermeabilização laje Apucarana",
+    ],
+  },
+  // ── tratamento-decks (só BC) ─────────────────────────────────────
+  {
+    service: services[4],
+    city: cities.bc,
+    title: "Tratamento de Decks e Madeiras em Balneário Camboriú",
+    metaTitle: "Tratamento de Decks e Madeiras em Balneário Camboriú SC | FA Limpeza",
+    metaDescription:
+      "Restauração e impermeabilização de decks de madeira em Balneário Camboriú SC. Recupera a cor original e protege contra umidade e UV. Hotéis e alto padrão. Orçamento grátis.",
+    h1: "Tratamento de Decks e Madeiras em Balneário Camboriú, SC",
+    keywords: [
+      "tratamento deck madeira Balneário Camboriú",
+      "restauração deck BC SC",
+      "impermeabilização deck madeira BC",
+      "limpeza deck Balneário Camboriú",
+    ],
+  },
+  // ── pintura-epoxi ────────────────────────────────────────────────
+  {
+    service: services[5],
+    city: cities.bc,
+    title: "Pintura Epoxi em Balneário Camboriú",
+    metaTitle: "Pintura Epoxi para Pisos em Balneário Camboriú SC | FA Limpeza",
+    metaDescription:
+      "Aplicação de piso epóxi em garagens, galpões e condomínios em Balneário Camboriú SC. Superfície lavável, antiderrapante e durável. Orçamento grátis.",
+    h1: "Pintura Epoxi para Pisos em Balneário Camboriú, SC",
+    keywords: [
+      "pintura epoxi Balneário Camboriú",
+      "piso epóxi BC SC",
+      "pintura garagem Balneário Camboriú",
+      "epoxi condomínio BC",
+    ],
+  },
+  {
+    service: services[5],
+    city: cities.apu,
+    title: "Pintura Epoxi em Apucarana",
+    metaTitle: "Pintura Epoxi para Pisos em Apucarana PR | FA Limpeza",
+    metaDescription:
+      "Revestimento epóxi para garagens, galpões e indústrias em Apucarana PR. Superfície lavável e antiderrapante de alta resistência. Orçamento sem compromisso.",
+    h1: "Pintura Epoxi para Pisos em Apucarana, PR",
+    keywords: [
+      "pintura epoxi Apucarana",
+      "piso epóxi Apucarana PR",
+      "pintura garagem Apucarana",
+      "epoxi industrial Apucarana",
+    ],
+  },
+  // ── limpeza-piscinas (só BC) ─────────────────────────────────────
+  {
+    service: services[6],
+    city: cities.bc,
+    title: "Limpeza de Piscinas em Balneário Camboriú",
+    metaTitle: "Limpeza de Piscinas e Área Externa em Balneário Camboriú SC | FA Limpeza",
+    metaDescription:
+      "Limpeza técnica de piscinas, calçadas e áreas externas em Balneário Camboriú SC. Remoção de algas e sujeira com equipamentos profissionais. Hotéis e condomínios. Orçamento grátis.",
+    h1: "Limpeza de Piscinas e Área Externa em Balneário Camboriú, SC",
+    keywords: [
+      "limpeza piscina Balneário Camboriú",
+      "limpeza área externa BC SC",
+      "limpeza calçada Balneário Camboriú",
+      "remoção algas piscina BC",
+    ],
+  },
+  // ── porcelanato-areas-externas ───────────────────────────────────
+  {
+    service: services[7],
+    city: cities.bc,
+    title: "Limpeza de Porcelanato em Balneário Camboriú",
+    metaTitle: "Limpeza e Restauração de Porcelanato em Balneário Camboriú SC | FA Limpeza",
+    metaDescription:
+      "Limpeza profunda e restauração de porcelanato em Balneário Camboriú SC. Removemos manchas de cimento, tinta e sujeira incrustada. Condomínios e áreas externas. Orçamento grátis.",
+    h1: "Limpeza e Restauração de Porcelanato em Balneário Camboriú, SC",
+    keywords: [
+      "limpeza porcelanato Balneário Camboriú",
+      "restauração porcelanato BC SC",
+      "limpeza área externa porcelanato BC",
+      "limpeza fachada Balneário Camboriú",
+    ],
+  },
+  {
+    service: services[7],
+    city: cities.apu,
+    title: "Limpeza de Porcelanato em Apucarana",
+    metaTitle: "Limpeza e Restauração de Porcelanato em Apucarana PR | FA Limpeza",
+    metaDescription:
+      "Limpeza de porcelanato e áreas externas em Apucarana PR. Removemos manchas de cimento, tinta e sujeira acumulada com técnica especializada. Orçamento sem compromisso.",
+    h1: "Limpeza e Restauração de Porcelanato em Apucarana, PR",
+    keywords: [
+      "limpeza porcelanato Apucarana",
+      "restauração porcelanato Apucarana PR",
+      "limpeza área externa Apucarana",
+      "porcelanato técnico Apucarana PR",
     ],
   },
 ]
