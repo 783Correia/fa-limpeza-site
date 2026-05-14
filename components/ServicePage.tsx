@@ -1,7 +1,6 @@
 import type { PageService } from "@/lib/services"
 import { waLink, site } from "@/lib/config"
 import Link from "next/link"
-import Image from "next/image"
 
 interface Props {
   page: PageService
@@ -125,13 +124,10 @@ export default function ServicePage({ page }: Props) {
                 border: "1px solid var(--border)",
               }}
             >
-              <Image
+              <img
                 src={service.image}
                 alt={service.name}
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="(max-width: 768px) 100vw, 420px"
-                priority
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
             </div>
           </div>
