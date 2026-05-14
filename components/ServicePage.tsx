@@ -1,6 +1,7 @@
 import type { PageService } from "@/lib/services"
 import { waLink, site } from "@/lib/config"
 import Link from "next/link"
+import Image from "next/image"
 
 interface Props {
   page: PageService
@@ -80,30 +81,59 @@ export default function ServicePage({ page }: Props) {
             </span>
           </nav>
 
-          <p className="eyebrow" style={{ marginBottom: 16 }}>
-            {city.name} · {city.state}
-          </p>
-          <h1 className="h1" style={{ color: "var(--ice)", maxWidth: 760, marginBottom: 24 }}>
-            {h1}
-          </h1>
-          <p
+          <div
             style={{
-              fontSize: 17,
-              color: "var(--soft)",
-              maxWidth: 560,
-              lineHeight: 1.65,
-              marginBottom: 36,
+              display: "grid",
+              gridTemplateColumns: "1fr 420px",
+              gap: 56,
+              alignItems: "center",
             }}
           >
-            {service.description}
-          </p>
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href={waLink} target="_blank" rel="noopener" className="btn-primary">
-              Solicitar Orçamento Grátis
-            </a>
-            <a href={`tel:${site.phone.replace(/\D/g, "")}`} className="btn-outline">
-              {site.phone}
-            </a>
+            <div>
+              <p className="eyebrow" style={{ marginBottom: 16 }}>
+                {city.name} · {city.state}
+              </p>
+              <h1 className="h1" style={{ color: "var(--ice)", marginBottom: 24 }}>
+                {h1}
+              </h1>
+              <p
+                style={{
+                  fontSize: 17,
+                  color: "var(--soft)",
+                  maxWidth: 520,
+                  lineHeight: 1.65,
+                  marginBottom: 36,
+                }}
+              >
+                {service.description}
+              </p>
+              <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+                <a href={waLink} target="_blank" rel="noopener" className="btn-primary">
+                  Solicitar Orçamento Grátis
+                </a>
+                <a href={`tel:${site.phone.replace(/\D/g, "")}`} className="btn-outline">
+                  {site.phone}
+                </a>
+              </div>
+            </div>
+
+            <div
+              style={{
+                position: "relative",
+                height: 360,
+                overflow: "hidden",
+                border: "1px solid var(--border)",
+              }}
+            >
+              <Image
+                src={service.image}
+                alt={service.name}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 420px"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { site, waLink } from "@/lib/config"
 import { services } from "@/lib/services"
 
@@ -9,38 +10,35 @@ export const metadata: Metadata = {
     "Especialistas em restauração técnica de pisos, telhados e decks para hotéis, condomínios e imóveis de alto padrão em Balneário Camboriú SC e Apucarana PR. Solicite orçamento.",
 }
 
-const serviceIcons: Record<string, string> = {
-  layers: "⬡",
-  building: "⬢",
-  sparkles: "✦",
-  home: "⬛",
-  tree: "◈",
-  paint: "◉",
-  water: "◎",
-  grid: "⊞",
-}
 
 const segments = [
   {
     title: "Hotéis",
     desc: "Manutenção de áreas nobres, restauração de pisos de lobby, impermeabilização de coberturas e tratamento de piscinas. Contratos de manutenção recorrente.",
-    icon: "🏨",
+    image: "/images/hoteis.jpg",
   },
   {
     title: "Condomínios",
     desc: "Restauração de áreas comuns, impermeabilização de telhados e coberturas, tratamento de garagens com pintura epoxi. Parceria com síndicos e administradoras.",
-    icon: "🏢",
+    image: "/images/condominios.jpg",
   },
   {
     title: "Construtoras",
     desc: "Limpeza técnica pós-obra para entrega ao cliente final. Capacidade de atender obras de grande porte com equipe especializada e prazo garantido.",
-    icon: "🏗️",
+    image: "/images/pos-obra.jpg",
   },
   {
     title: "Alto Padrão",
     desc: "Restauração de pisos de mármore, granito e porcelanato em apartamentos de luxo. Antes e depois visível. Resultado que dura anos.",
-    icon: "⭐",
+    image: "/images/lapidacao.jpg",
   },
+]
+
+const galleryItems = [
+  { src: "/images/gallery-1.jpg", w: 739, h: 739, label: "Impermeabilização de Piso", city: "Balneário Camboriú, SC" },
+  { src: "/images/gallery-2.jpg", w: 1000, h: 750, label: "Lapidação de Mármore", city: "Balneário Camboriú, SC" },
+  { src: "/images/gallery-3.jpg", w: 650, h: 400, label: "Restauração de Superfície", city: "Balneário Camboriú, SC" },
+  { src: "/images/gallery-5.jpg", w: 1199, h: 807, label: "Limpeza Pós-Obra", city: "Apucarana, PR" },
 ]
 
 const stats = [
@@ -181,16 +179,33 @@ export default function Home() {
               <div
                 key={s.title}
                 className="card"
-                style={{ padding: "32px 28px" }}
+                style={{ padding: 0, overflow: "hidden" }}
               >
-                <div style={{ fontSize: 32, marginBottom: 14 }}>{s.icon}</div>
-                <h3
-                  className="h3"
-                  style={{ color: "var(--ice)", marginBottom: 12, fontSize: 22 }}
-                >
-                  {s.title}
-                </h3>
-                <p style={{ fontSize: 14, color: "var(--soft)", lineHeight: 1.65 }}>{s.desc}</p>
+                <div style={{ position: "relative", height: 200 }}>
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to bottom, rgba(10,10,10,0) 30%, rgba(10,10,10,.7) 100%)",
+                    }}
+                  />
+                </div>
+                <div style={{ padding: "24px 28px 28px" }}>
+                  <h3
+                    className="h3"
+                    style={{ color: "var(--ice)", marginBottom: 12, fontSize: 22 }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p style={{ fontSize: 14, color: "var(--soft)", lineHeight: 1.65 }}>{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -222,22 +237,28 @@ export default function Home() {
                 style={{
                   background: "var(--raised)",
                   border: "1px solid var(--border)",
-                  padding: "28px",
+                  padding: 0,
+                  overflow: "hidden",
                   transition: "border-color .18s",
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 900,
-                    fontSize: 28,
-                    color: "var(--blue-l)",
-                    marginBottom: 12,
-                    lineHeight: 1,
-                  }}
-                >
-                  {serviceIcons[s.icon]}
+                <div style={{ position: "relative", height: 160 }}>
+                  <Image
+                    src={s.image}
+                    alt={s.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "rgba(10,10,10,.35)",
+                    }}
+                  />
                 </div>
+                <div style={{ padding: "22px 28px 28px" }}>
                 <h3
                   className="h3"
                   style={{ color: "var(--ice)", marginBottom: 10, fontSize: 18 }}
@@ -272,6 +293,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                </div>
               </div>
             ))}
           </div>
@@ -293,68 +315,60 @@ export default function Home() {
               gap: 2,
             }}
           >
-            {[
-              { label: "Impermeabilização de Piso", city: "Balneário Camboriú, SC" },
-              { label: "Lapidação de Mármore", city: "Balneário Camboriú, SC" },
-              { label: "Restauração de Deck", city: "Balneário Camboriú, SC" },
-              { label: "Limpeza Pós-Obra", city: "Apucarana, PR" },
-            ].map((item, i) => (
+            {galleryItems.map((item, i) => (
               <div
                 key={i}
                 style={{
-                  background: "var(--deep)",
-                  border: "1px solid var(--border)",
+                  position: "relative",
                   aspectRatio: "16/10",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 8,
+                  overflow: "hidden",
+                  border: "1px solid var(--border)",
                 }}
               >
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  fill
+                  style={{ objectFit: "cover", transition: "transform .4s" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div
                   style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 10,
-                    letterSpacing: ".14em",
-                    textTransform: "uppercase",
-                    color: "var(--mute)",
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(to top, rgba(6,13,26,.85) 0%, transparent 55%)",
                   }}
-                >
-                  ANTES / DEPOIS
-                </div>
-                <div
-                  className="h3"
-                  style={{ color: "var(--soft)", fontSize: 16, textAlign: "center" }}
-                >
-                  {item.label}
-                </div>
+                />
                 <div
                   style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 10,
-                    letterSpacing: ".12em",
-                    color: "var(--mute)",
-                    textTransform: "uppercase",
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: "20px 22px",
                   }}
                 >
-                  {item.city}
+                  <div
+                    className="h3"
+                    style={{ color: "var(--ice)", fontSize: 17, marginBottom: 4 }}
+                  >
+                    {item.label}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 10,
+                      letterSpacing: ".12em",
+                      textTransform: "uppercase",
+                      color: "var(--soft)",
+                    }}
+                  >
+                    {item.city}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <p
-            style={{
-              fontSize: 13,
-              color: "var(--mute)",
-              marginTop: 16,
-              fontFamily: "var(--font-mono)",
-              letterSpacing: ".1em",
-              textTransform: "uppercase",
-            }}
-          >
-            * Fotos reais serão adicionadas em breve — acompanhe @{site.instagram}
-          </p>
         </div>
       </section>
 

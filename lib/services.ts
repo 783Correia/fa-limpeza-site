@@ -4,6 +4,7 @@ export interface Service {
   shortName: string
   description: string
   icon: string
+  image: string
   cities: string[]
 }
 
@@ -15,6 +16,7 @@ export const services: Service[] = [
     description:
       "Tratamento técnico que protege e restaura pisos de mármore, granito, porcelanato e pedras naturais. Resultado definitivo contra manchas e umidade.",
     icon: "layers",
+    image: "/images/lapidacao.jpg",
     cities: ["balneario-camboriu", "apucarana"],
   },
   {
@@ -24,6 +26,7 @@ export const services: Service[] = [
     description:
       "Limpeza técnica especializada para construtoras e incorporadoras. Entrega do imóvel no padrão exigido para o cliente final.",
     icon: "building",
+    image: "/images/pos-obra.jpg",
     cities: ["balneario-camboriu", "apucarana"],
   },
   {
@@ -33,6 +36,7 @@ export const services: Service[] = [
     description:
       "Processo técnico que recupera o brilho e a uniformidade de pisos usinados, polidos e lustrados. Resultado comparável ao piso novo.",
     icon: "sparkles",
+    image: "/images/lapidacao.jpg",
     cities: ["balneario-camboriu", "apucarana"],
   },
   {
@@ -42,6 +46,7 @@ export const services: Service[] = [
     description:
       "Impermeabilização técnica que elimina infiltrações e prolonga a vida útil da cobertura. Aplicação em telhas cerâmicas, fibrocimento e lajes.",
     icon: "home",
+    image: "/images/telhados.png",
     cities: ["balneario-camboriu", "apucarana"],
   },
   {
@@ -51,6 +56,7 @@ export const services: Service[] = [
     description:
       "Limpeza profunda e impermeabilização de decks de madeira, restaurando a cor original e protegendo contra umidade e raios UV.",
     icon: "tree",
+    image: "/images/decks.jpg",
     cities: ["balneario-camboriu"],
   },
   {
@@ -60,6 +66,7 @@ export const services: Service[] = [
     description:
       "Revestimento epóxi de alta resistência para pisos de garagem, galpões e áreas industriais. Superfície lavável, antiderrapante e durável.",
     icon: "paint",
+    image: "/images/epoxi.jpg",
     cities: ["balneario-camboriu", "apucarana"],
   },
   {
@@ -69,6 +76,7 @@ export const services: Service[] = [
     description:
       "Limpeza técnica de piscinas, calçadas e áreas externas. Remoção de algas, bolor e sujeira incrustada com equipamentos profissionais.",
     icon: "water",
+    image: "/images/piscina.jpg",
     cities: ["balneario-camboriu"],
   },
   {
@@ -78,6 +86,7 @@ export const services: Service[] = [
     description:
       "Limpeza e restauração de porcelanato técnico, calçadas e áreas externas. Removemos manchas de cimento, tinta e sujeira incrustada.",
     icon: "grid",
+    image: "/images/porcelanato.jpg",
     cities: ["balneario-camboriu", "apucarana"],
   },
 ]
