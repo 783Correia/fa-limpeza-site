@@ -15,6 +15,7 @@ export default function Header() {
 
   return (
     <header
+      className="header-inner"
       style={{
         position: "fixed",
         top: 0,
@@ -24,7 +25,6 @@ export default function Header() {
         height: 64,
         display: "flex",
         alignItems: "center",
-        padding: "0 48px",
         background: "rgba(255,255,255,.96)",
         backdropFilter: "blur(12px)",
         borderBottom: "1px solid var(--border)",

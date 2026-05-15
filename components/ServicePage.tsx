@@ -81,9 +81,9 @@ export default function ServicePage({ page }: Props) {
           </nav>
 
           <div
+            className="grid-svc-hero"
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 420px",
               gap: 56,
               alignItems: "center",
             }}
@@ -137,10 +137,9 @@ export default function ServicePage({ page }: Props) {
       {/* ── CONTEÚDO ── */}
       <section className="section">
         <div
-          className="container"
+          className="container grid-svc-content"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 380px",
             gap: 64,
             alignItems: "start",
           }}

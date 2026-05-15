@@ -81,7 +81,7 @@ export default function Page() {
 
       <section className="section">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+          <div className="grid-2col" style={{ display: "grid", gap: 64, alignItems: "start" }}>
             <div>
               <p className="eyebrow" style={{ marginBottom: 12 }}>Canais de atendimento</p>
               <h2 className="h2" style={{ color: "var(--ice)", marginBottom: 32, fontSize: 32 }}>

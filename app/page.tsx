@@ -33,6 +33,7 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section
+        className="hero-section"
         style={{
           minHeight: "100vh",
           display: "flex",
@@ -43,10 +44,9 @@ export default function Home() {
         }}
       >
         <div
-          className="container"
+          className="container grid-2col"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
             gap: 48,
             alignItems: "center",
             width: "100%",
@@ -99,6 +99,7 @@ export default function Home() {
 
           {/* Right — photo collage */}
           <div
+            className="mobile-hide"
             style={{
               position: "relative",
               height: 560,
@@ -317,9 +318,9 @@ export default function Home() {
       <section className="section" id="segmentos" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
           <div
+            className="grid-2col"
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
               gap: 64,
               alignItems: "center",
             }}
@@ -437,10 +438,9 @@ export default function Home() {
             </p>
           </div>
           <div
+            className="grid-gallery"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gridTemplateRows: "260px 260px",
               gap: 12,
             }}
           >
