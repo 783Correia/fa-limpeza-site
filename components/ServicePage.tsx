@@ -157,7 +157,7 @@ export default function ServicePage({ page }: Props) {
               {[
                 {
                   title: "Técnica especializada",
-                  body: `Não somos serviço de limpeza doméstica. Somos especialistas em restauração técnica de superfícies — com método, equipamentos profissionais e resultado definitivo em ${city.name}.`,
+                  body: `Usamos equipamentos profissionais e produtos certos para cada superfície. Mármore não é porcelanato, fibrocimento não é cerâmica — e isso faz toda diferença no resultado final em ${city.name}.`,
                 },
                 {
                   title: "Resultado visível e garantido",
@@ -209,8 +209,8 @@ export default function ServicePage({ page }: Props) {
               <p style={{ fontSize: 14, color: "var(--soft)", lineHeight: 1.8, marginBottom: 16 }}>
                 A FA Limpeza Profissional atende {city.name}, {city.state} com serviço técnico de{" "}
                 {service.name.toLowerCase()}. Nossa equipe utiliza equipamentos profissionais e
-                produtos especializados para garantir resultado definitivo — não apenas limpeza
-                superficial.
+                produtos certos para cada tipo de superfície, para que o resultado apareça de
+                verdade — não só limpar por cima.
               </p>
               <p style={{ fontSize: 14, color: "var(--soft)", lineHeight: 1.8 }}>
                 Atendemos hotéis, condomínios, construtoras e imóveis de alto padrão em{" "}

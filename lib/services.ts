@@ -14,7 +14,7 @@ export const services: Service[] = [
     name: "Impermeabilização de Pisos e Pedras",
     shortName: "Impermeabilização",
     description:
-      "Tratamento técnico que protege e restaura pisos de mármore, granito, porcelanato e pedras naturais. Resultado definitivo contra manchas e umidade.",
+      "Protege e restaura pisos de mármore, granito, porcelanato e pedras naturais. Chega de mancha que não sai e umidade que sempre volta.",
     icon: "layers",
     image: "/images/lapidacao.jpg",
     cities: ["balneario-camboriu", "apucarana"],
@@ -24,7 +24,7 @@ export const services: Service[] = [
     name: "Limpeza Pós-Obra",
     shortName: "Pós-Obra",
     description:
-      "Limpeza técnica especializada para construtoras e incorporadoras. Entrega do imóvel no padrão exigido para o cliente final.",
+      "Para construtoras e incorporadoras que precisam entregar o imóvel limpo e sem pendência. A gente entra, faz e entrega no prazo.",
     icon: "building",
     image: "/images/pos-obra.jpg",
     cities: ["balneario-camboriu", "apucarana"],
@@ -34,7 +34,7 @@ export const services: Service[] = [
     name: "Lapidação de Piso Usinado",
     shortName: "Lapidação",
     description:
-      "Processo técnico que recupera o brilho e a uniformidade de pisos usinados, polidos e lustrados. Resultado comparável ao piso novo.",
+      "Recupera o brilho e a uniformidade de pisos usinados, polidos e lustrados. O resultado fica igual ao piso novo — sem trocar nada.",
     icon: "sparkles",
     image: "/images/lapidacao.jpg",
     cities: ["balneario-camboriu", "apucarana"],
@@ -44,7 +44,7 @@ export const services: Service[] = [
     name: "Impermeabilização de Telhados",
     shortName: "Telhados",
     description:
-      "Impermeabilização técnica que elimina infiltrações e prolonga a vida útil da cobertura. Aplicação em telhas cerâmicas, fibrocimento e lajes.",
+      "Elimina infiltrações em telhas cerâmicas, fibrocimento e lajes. Seu telhado para de dar trabalho.",
     icon: "home",
     image: "/images/telhados.png",
     cities: ["balneario-camboriu", "apucarana"],

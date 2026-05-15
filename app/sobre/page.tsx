@@ -53,7 +53,7 @@ export default function Page() {
             FA Limpeza Profissional
           </h1>
           <p style={{ fontSize: 17, color: "var(--soft)", maxWidth: 580, lineHeight: 1.7 }}>
-            Especialistas em restauração e impermeabilização técnica de superfícies. Atendemos Balneário Camboriú SC e Apucarana PR com foco em clientes B2B — hotéis, condomínios e construtoras.
+            Pisos, telhados e áreas externas para hotéis, condomínios e construtoras em Balneário Camboriú SC e Apucarana PR. Não fazemos limpeza doméstica — essa é a nossa especialidade.
           </p>
         </div>
       </section>

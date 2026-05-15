@@ -334,9 +334,9 @@ export default function Home() {
                 Hotéis, condomínios e construtoras
               </h2>
               <p style={{ fontSize: 16, color: "var(--soft)", lineHeight: 1.75, marginBottom: 32 }}>
-                Não atendemos limpeza doméstica. Somos especialistas em restauração técnica
-                de superfícies para clientes B2B que precisam de resultado profissional,
-                prazo garantido e parceiro de confiança.
+                Síndico com garagem manchada, gerente de hotel com piscina encardida,
+                construtora na correria de entrega — é exatamente pra vocês que trabalhamos.
+                Não fazemos limpeza residencial.
               </p>
               <a href={waLink} target="_blank" rel="noopener" className="btn-primary">
                 Falar com a equipe
