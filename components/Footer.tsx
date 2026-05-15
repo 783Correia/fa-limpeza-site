@@ -6,10 +6,10 @@ const serviceLinks = [
   { label: "Impermeabilização de Pisos — Apucarana", href: "/impermeabilizacao-pisos-apucarana" },
   { label: "Limpeza Pós-Obra — BC", href: "/limpeza-pos-obra-balneario-camboriu" },
   { label: "Limpeza Pós-Obra — Apucarana", href: "/limpeza-pos-obra-apucarana" },
-  { label: "Lapidação de Piso Usinado", href: "/lapidacao-piso-usinado" },
-  { label: "Impermeabilização de Telhados", href: "/impermeabilizacao-telhados" },
-  { label: "Pintura Epoxi", href: "/pintura-epoxi" },
-  { label: "Tratamento de Decks", href: "/tratamento-decks" },
+  { label: "Lapidação de Piso Usinado — BC", href: "/lapidacao-piso-usinado-balneario-camboriu" },
+  { label: "Impermeabilização de Telhados — BC", href: "/impermeabilizacao-telhados-balneario-camboriu" },
+  { label: "Pintura Epoxi — BC", href: "/pintura-epoxi-balneario-camboriu" },
+  { label: "Tratamento de Decks — BC", href: "/tratamento-decks-balneario-camboriu" },
 ]
 
 export default function Footer() {
@@ -17,8 +17,8 @@ export default function Footer() {
     <footer
       id="contato"
       style={{
-        background: "var(--deep)",
-        borderTop: "1px solid var(--border)",
+        background: "var(--panel)",
+        borderTop: "1px solid var(--border2)",
         padding: "64px 0 32px",
       }}
     >
@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <div className="label-mono" style={{ marginBottom: 16 }}>Serviços</div>
+            <div className="label-mono" style={{ marginBottom: 16, color: "var(--ice)" }}>Serviços</div>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
               {serviceLinks.map((l) => (
                 <li key={l.href}>
@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <div className="label-mono" style={{ marginBottom: 16 }}>Contato</div>
+            <div className="label-mono" style={{ marginBottom: 16, color: "var(--ice)" }}>Contato</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <a
                 href={`https://wa.me/${site.whatsapp}`}
@@ -129,7 +129,7 @@ export default function Footer() {
                 @{site.instagram}
               </a>
               <div style={{ marginTop: 8 }}>
-                <div className="label-mono" style={{ marginBottom: 8 }}>Cidades</div>
+                <div className="label-mono" style={{ marginBottom: 8, color: "var(--ice)" }}>Cidades</div>
                 <p style={{ fontSize: 13, color: "var(--soft)", lineHeight: 1.8 }}>
                   Balneário Camboriú, SC<br />
                   Apucarana, PR
