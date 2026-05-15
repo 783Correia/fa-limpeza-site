@@ -19,9 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = rows[0] as BlogPost | undefined
   if (!post) return { title: 'Post não encontrado' }
 
-  const ogImage = post.image_url?.startsWith('http')
-    ? post.image_url
-    : `${BASE_URL}/images/og-default.jpg`
+  const ogImage = post.image_url
+    ? post.image_url.startsWith('http')
+      ? post.image_url
+      : `${BASE_URL}${post.image_url}`
+    : `${BASE_URL}/images/condominios.jpg`
 
   return {
     title: `${post.meta_title || post.title} | FA Limpeza Profissional`,
@@ -60,7 +62,7 @@ export default async function BlogPostPage({ params }: Props) {
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
-    image: post.image_url?.startsWith('http') ? post.image_url : undefined,
+    image: post.image_url ? (post.image_url.startsWith('http') ? post.image_url : `${BASE_URL}${post.image_url}`) : undefined,
     datePublished: post.date,
     dateModified: post.updated_at,
     author: { '@type': 'Organization', name: 'FA Limpeza Profissional', url: BASE_URL },
