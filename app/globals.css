@@ -186,6 +186,18 @@ body {
   .btn-primary, .btn-outline { font-size: 14px; padding: 14px 24px; }
 }
 
+/* ── marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
 /* ── header responsive ── */
 .nav-desktop  { display: none !important; }
 .nav-hamburger{ display: flex !important; }
