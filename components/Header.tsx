@@ -6,6 +6,7 @@ import { waLink } from "@/lib/config"
 const nav = [
   { label: "Serviços", href: "/#servicos" },
   { label: "Portfólio", href: "/#portfolio" },
+  { label: "Blog", href: "/blog" },
   { label: "Sobre", href: "/sobre" },
   { label: "Contato", href: "/contato" },
 ]
