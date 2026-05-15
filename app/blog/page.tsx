@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase'
+import { sql } from '@/lib/db'
 import { BlogPost } from '@/types/blog'
 
 export const dynamic = 'force-dynamic'
@@ -20,13 +20,8 @@ function formatDate(dateStr: string) {
 }
 
 export default async function BlogPage() {
-  const { data: posts } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('published', true)
-    .order('date', { ascending: false })
-
-  const typedPosts: BlogPost[] = posts ?? []
+  const rows = await sql`SELECT * FROM blog_posts WHERE published = true ORDER BY date DESC`
+  const typedPosts: BlogPost[] = rows as BlogPost[]
 
   return (
     <main>

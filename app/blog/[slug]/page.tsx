@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
-import { supabase } from '@/lib/supabase'
+import { sql } from '@/lib/db'
+import { BlogPost } from '@/types/blog'
 import BlogPostContent from './content'
 
 export const dynamic = 'force-dynamic'
@@ -14,20 +15,12 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-
-  const { data: post } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('slug', slug)
-    .eq('published', true)
-    .single()
-
+  const rows = await sql`SELECT * FROM blog_posts WHERE slug = ${slug} AND published = true LIMIT 1`
+  const post = rows[0] as BlogPost | undefined
   if (!post) return { title: 'Post não encontrado' }
 
   const ogImage = post.image_url?.startsWith('http')
     ? post.image_url
-    : post.image_url
-    ? `${BASE_URL}${post.image_url}`
     : `${BASE_URL}/images/og-default.jpg`
 
   return {
@@ -45,63 +38,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: 'pt_BR',
       images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-      images: [ogImage],
-    },
   }
 }
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
 
-  const { data: post } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('slug', slug)
-    .eq('published', true)
-    .single()
-
+  const rows = await sql`SELECT * FROM blog_posts WHERE slug = ${slug} AND published = true LIMIT 1`
+  const post = rows[0] as BlogPost | undefined
   if (!post) notFound()
 
-  const { data: related } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('published', true)
-    .neq('id', post.id)
-    .limit(3)
+  const relatedRows = await sql`
+    SELECT * FROM blog_posts
+    WHERE published = true AND id != ${post.id}
+    ORDER BY date DESC LIMIT 3
+  `
+  const related = relatedRows as BlogPost[]
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
-    image: post.image_url?.startsWith('http')
-      ? post.image_url
-      : post.image_url
-      ? `${BASE_URL}${post.image_url}`
-      : undefined,
+    image: post.image_url?.startsWith('http') ? post.image_url : undefined,
     datePublished: post.date,
     dateModified: post.updated_at,
-    author: {
-      '@type': 'Organization',
-      name: 'FA Limpeza Profissional',
-      url: BASE_URL,
-    },
+    author: { '@type': 'Organization', name: 'FA Limpeza Profissional', url: BASE_URL },
     publisher: {
       '@type': 'Organization',
       name: 'FA Limpeza Profissional',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${BASE_URL}/images/logo.png`,
-      },
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
     },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${BASE_URL}/blog/${post.slug}`,
-    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/blog/${post.slug}` },
   }
 
   const breadcrumbSchema = {
@@ -110,28 +78,17 @@ export default async function BlogPostPage({ params }: Props) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Início', item: BASE_URL },
       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: post.title,
-        item: `${BASE_URL}/blog/${post.slug}`,
-      },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE_URL}/blog/${post.slug}` },
     ],
   }
 
   return (
     <>
-      <Script
-        id={`article-schema-${post.slug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <Script
-        id={`breadcrumb-schema-${post.slug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <BlogPostContent post={post} related={related ?? []} />
+      <Script id={`article-${post.slug}`} type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <Script id={`breadcrumb-${post.slug}`} type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <BlogPostContent post={post} related={related} />
     </>
   )
 }

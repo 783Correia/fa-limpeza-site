@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { supabase } from '@/lib/supabase'
+import { sql } from '@/lib/db'
 
 export const dynamic = 'force-dynamic'
 
@@ -23,14 +23,11 @@ const serviceRoutes = [
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { data: posts } = await supabase
-    .from('blog_posts')
-    .select('slug, updated_at')
-    .eq('published', true)
+  const posts = await sql`SELECT slug, updated_at FROM blog_posts WHERE published = true`
 
-  const blogEntries: MetadataRoute.Sitemap = (posts ?? []).map((p) => ({
+  const blogEntries: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
-    lastModified: new Date(p.updated_at),
+    lastModified: new Date(p.updated_at as string),
     changeFrequency: 'monthly',
     priority: 0.7,
   }))

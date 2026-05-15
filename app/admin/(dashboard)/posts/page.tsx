@@ -1,21 +1,19 @@
-import { supabaseAdmin } from '@/lib/supabase-admin'
+import { sql } from '@/lib/db'
+import { BlogPost } from '@/types/blog'
 import Link from 'next/link'
 import PostActions from './PostActions'
 
 export const dynamic = 'force-dynamic'
 
 export default async function PostsPage() {
-  const { data: posts } = await supabaseAdmin
-    .from('blog_posts')
-    .select('*')
-    .order('created_at', { ascending: false })
+  const posts = (await sql`SELECT * FROM blog_posts ORDER BY created_at DESC`) as BlogPost[]
 
   return (
     <div className="p-6 max-w-5xl">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-white text-2xl font-bold">Posts</h1>
-          <p className="text-gray-500 text-sm mt-0.5">{posts?.length ?? 0} posts no total</p>
+          <p className="text-gray-500 text-sm mt-0.5">{posts.length} posts no total</p>
         </div>
         <Link
           href="/admin/posts/new"
@@ -25,16 +23,16 @@ export default async function PostsPage() {
         </Link>
       </div>
 
-      {(!posts || posts.length === 0) && (
+      {posts.length === 0 && (
         <div className="text-center py-20 bg-gray-900 rounded-2xl border border-gray-800">
           <p className="text-gray-400 text-lg mb-2">Nenhum post ainda</p>
-          <p className="text-gray-600 text-sm mb-8">
+          <p className="text-gray-600 text-sm">
             Crie seu primeiro post clicando em &quot;+ Novo Post&quot;.
           </p>
         </div>
       )}
 
-      {posts && posts.length > 0 && (
+      {posts.length > 0 && (
         <div className="space-y-2">
           {posts.map((post) => (
             <div
@@ -43,22 +41,14 @@ export default async function PostsPage() {
             >
               {post.image_url && (
                 <div className="w-16 h-12 rounded-lg overflow-hidden bg-gray-800 shrink-0">
-                  <img
-                    src={post.image_url}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={post.image_url} alt={post.title} className="w-full h-full object-cover" />
                 </div>
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span
-                    className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                      post.published
-                        ? 'bg-blue-600/10 text-blue-400'
-                        : 'bg-gray-700 text-gray-400'
-                    }`}
-                  >
+                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                    post.published ? 'bg-blue-600/10 text-blue-400' : 'bg-gray-700 text-gray-400'
+                  }`}>
                     {post.published ? 'Publicado' : 'Rascunho'}
                   </span>
                   <span className="text-gray-600 text-xs">{post.category}</span>

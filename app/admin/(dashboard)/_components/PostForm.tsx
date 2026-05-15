@@ -51,12 +51,16 @@ export default function PostForm({ post }: { post?: BlogPost }) {
     setError('')
     const fd = new FormData()
     fd.append('file', file)
-    const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
+    fd.append('upload_preset', process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET ?? '')
+    const res = await fetch(
+      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+      { method: 'POST', body: fd }
+    )
     const data = await res.json()
-    if (!res.ok) {
-      setError(data.error || 'Erro no upload')
+    if (data.error) {
+      setError(data.error.message || 'Erro no upload')
     } else {
-      setImageUrl(data.url)
+      setImageUrl(data.secure_url)
     }
     setUploading(false)
     e.target.value = ''
