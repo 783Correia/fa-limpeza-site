@@ -25,9 +25,10 @@ export default function Header() {
         display: "flex",
         alignItems: "center",
         padding: "0 48px",
-        background: "rgba(10,10,10,.92)",
+        background: "rgba(255,255,255,.96)",
         backdropFilter: "blur(12px)",
         borderBottom: "1px solid var(--border)",
+        boxShadow: "0 1px 0 var(--border)",
       }}
     >
       {/* Logo */}
@@ -133,8 +134,9 @@ export default function Header() {
             top: 64,
             left: 0,
             right: 0,
-            background: "var(--panel)",
+            background: "rgba(255,255,255,.98)",
             borderBottom: "1px solid var(--border)",
+            boxShadow: "0 8px 24px rgba(13,27,42,.08)",
             padding: "24px 20px",
             display: "flex",
             flexDirection: "column",
