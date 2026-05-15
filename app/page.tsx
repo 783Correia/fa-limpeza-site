@@ -153,43 +153,6 @@ export default function Home() {
                 alt="Atendemos hotéis e condomínios"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
-              {/* Badge on photo */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 14,
-                  left: 14,
-                  background: "rgba(255,255,255,.95)",
-                  backdropFilter: "blur(8px)",
-                  borderRadius: 10,
-                  padding: "10px 14px",
-                  boxShadow: "0 4px 16px rgba(13,27,42,.14)",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 900,
-                    fontSize: 18,
-                    color: "var(--blue)",
-                    lineHeight: 1,
-                    marginBottom: 2,
-                  }}
-                >
-                  B2B
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 9,
-                    letterSpacing: ".12em",
-                    textTransform: "uppercase",
-                    color: "var(--soft)",
-                  }}
-                >
-                  Hotéis · Condomínios
-                </div>
-              </div>
             </div>
 
             {/* Floating badge — top right of collage */}
