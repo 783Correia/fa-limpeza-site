@@ -95,47 +95,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Trust badges */}
-            <div
-              style={{
-                display: "flex",
-                gap: 24,
-                paddingTop: 24,
-                borderTop: "1px solid var(--border)",
-              }}
-            >
-              {[
-                { n: "8+", label: "Serviços especializados" },
-                { n: "2", label: "Estados atendidos" },
-                { n: "<2h", label: "Resposta via WhatsApp" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontWeight: 900,
-                      fontSize: 30,
-                      lineHeight: 1,
-                      color: "var(--blue)",
-                      marginBottom: 4,
-                    }}
-                  >
-                    {s.n}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 10,
-                      letterSpacing: ".12em",
-                      textTransform: "uppercase",
-                      color: "var(--mute)",
-                    }}
-                  >
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right — photo collage */}
