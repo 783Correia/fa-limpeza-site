@@ -1,13 +1,13 @@
 "use client"
 import Link from "next/link"
 import { useState } from "react"
-import { site, waLink } from "@/lib/config"
+import { waLink } from "@/lib/config"
 
 const nav = [
-  { label: "Serviços", href: "#servicos" },
-  { label: "Segmentos", href: "#segmentos" },
-  { label: "Cidades", href: "#cidades" },
-  { label: "Contato", href: "#contato" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Contato", href: "/contato" },
 ]
 
 export default function Header() {
@@ -31,11 +31,8 @@ export default function Header() {
       }}
     >
       {/* Logo */}
-      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-        <span
-          className="fa-mark"
-          style={{ width: 32, height: 32, fontSize: 14, letterSpacing: "-.04em" }}
-        >
+      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", flexShrink: 0 }}>
+        <span className="fa-mark" style={{ width: 32, height: 32, fontSize: 14, letterSpacing: "-.04em" }}>
           FA
         </span>
         <span
@@ -54,16 +51,15 @@ export default function Header() {
 
       {/* Nav desktop */}
       <nav
+        className="nav-desktop"
         style={{
           marginLeft: "auto",
-          display: "flex",
           alignItems: "center",
           gap: 32,
         }}
-        className="hidden md:flex"
       >
         {nav.map((n) => (
-          <a
+          <Link
             key={n.href}
             href={n.href}
             style={{
@@ -73,28 +69,32 @@ export default function Header() {
               textTransform: "uppercase",
               color: "var(--soft)",
               textDecoration: "none",
-              transition: "color .15s",
             }}
-            onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--ice)")}
-            onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--soft)")}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--ice)")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--soft)")}
           >
             {n.label}
-          </a>
+          </Link>
         ))}
-        <a href={waLink} target="_blank" rel="noopener" className="btn-primary" style={{ padding: "10px 20px", fontSize: 13 }}>
+        <a
+          href={waLink}
+          target="_blank"
+          rel="noopener"
+          className="btn-primary"
+          style={{ padding: "10px 20px", fontSize: 13 }}
+        >
           Orçamento
         </a>
       </nav>
 
-      {/* Hamburger mobile */}
+      {/* Hamburger button — mobile only */}
       <button
-        className="md:hidden"
+        className="nav-hamburger"
         style={{
           marginLeft: "auto",
           background: "none",
           border: "none",
           cursor: "pointer",
-          display: "flex",
           flexDirection: "column",
           gap: 5,
           padding: 8,
@@ -125,7 +125,7 @@ export default function Header() {
         ))}
       </button>
 
-      {/* Mobile menu */}
+      {/* Mobile menu drawer */}
       {open && (
         <div
           style={{
@@ -139,10 +139,11 @@ export default function Header() {
             display: "flex",
             flexDirection: "column",
             gap: 20,
+            zIndex: 99,
           }}
         >
           {nav.map((n) => (
-            <a
+            <Link
               key={n.href}
               href={n.href}
               onClick={() => setOpen(false)}
@@ -156,9 +157,16 @@ export default function Header() {
               }}
             >
               {n.label}
-            </a>
+            </Link>
           ))}
-          <a href={waLink} target="_blank" rel="noopener" className="btn-primary" style={{ textAlign: "center", justifyContent: "center" }}>
+          <a
+            href={waLink}
+            target="_blank"
+            rel="noopener"
+            className="btn-primary"
+            style={{ textAlign: "center", justifyContent: "center" }}
+            onClick={() => setOpen(false)}
+          >
             Solicitar Orçamento
           </a>
         </div>

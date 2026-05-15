@@ -185,3 +185,12 @@ body {
   .section-sm { padding: 48px 0; }
   .btn-primary, .btn-outline { font-size: 14px; padding: 14px 24px; }
 }
+
+/* ── header responsive ── */
+.nav-desktop  { display: none !important; }
+.nav-hamburger{ display: flex !important; }
+
+@media (min-width: 768px) {
+  .nav-desktop  { display: flex !important; }
+  .nav-hamburger{ display: none !important; }
+}
