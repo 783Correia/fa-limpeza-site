@@ -95,22 +95,12 @@ function PostCard({ post }: { post: BlogPost }) {
       style={{ textDecoration: 'none', display: 'block' }}
     >
       <article
-        className="card"
+        className="card blog-card"
         style={{
           borderRadius: 12,
           overflow: 'hidden',
           padding: 0,
-          transition: 'box-shadow .2s, transform .2s',
           cursor: 'pointer',
-        }}
-        onMouseEnter={(e) => {
-          ;(e.currentTarget as HTMLElement).style.boxShadow =
-            '0 8px 32px rgba(13,27,42,.12)'
-          ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
-        }}
-        onMouseLeave={(e) => {
-          ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
-          ;(e.currentTarget as HTMLElement).style.transform = 'none'
         }}
       >
         {/* Image */}
