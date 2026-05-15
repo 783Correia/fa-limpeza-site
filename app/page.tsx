@@ -41,8 +41,11 @@ export default function Home() {
           paddingTop: 64,
           background: "linear-gradient(135deg, #EDF3FC 0%, #F5F7FA 60%, #EAF0FB 100%)",
           overflow: "hidden",
+          position: "relative",
         }}
       >
+        <div className="hero-bg-glow" />
+        <div className="hero-bg-lines" />
         <div
           className="container grid-2col"
           style={{
@@ -50,6 +53,8 @@ export default function Home() {
             gap: 48,
             alignItems: "center",
             width: "100%",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {/* Left — copy */}

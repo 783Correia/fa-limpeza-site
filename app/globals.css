@@ -166,6 +166,36 @@ body {
   .btn-primary, .btn-outline { font-size: 14px; padding: 14px 24px; }
 }
 
+/* ── hero background animation ── */
+@keyframes heroLineDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 68px 68px; }
+}
+
+.hero-bg-lines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(21,101,192,.055) 0,
+    rgba(21,101,192,.055) 1px,
+    transparent 1px,
+    transparent 48px
+  );
+  background-size: 68px 68px;
+  animation: heroLineDrift 14s linear infinite;
+  pointer-events: none;
+}
+
+.hero-bg-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 12% 55%, rgba(21,101,192,.13) 0%, transparent 52%),
+    radial-gradient(ellipse at 88% 15%, rgba(21,101,192,.07) 0%, transparent 42%);
+  pointer-events: none;
+}
+
 /* ── marquee ── */
 @keyframes marquee {
   from { transform: translateX(0); }
