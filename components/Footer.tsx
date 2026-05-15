@@ -2,14 +2,14 @@ import Link from "next/link"
 import { site } from "@/lib/config"
 
 const serviceLinks = [
-  { label: "Impermeabilização de Pisos — BC", href: "/impermeabilizacao-pisos-balneario-camboriu" },
-  { label: "Impermeabilização de Pisos — Apucarana", href: "/impermeabilizacao-pisos-apucarana" },
-  { label: "Limpeza Pós-Obra — BC", href: "/limpeza-pos-obra-balneario-camboriu" },
-  { label: "Limpeza Pós-Obra — Apucarana", href: "/limpeza-pos-obra-apucarana" },
-  { label: "Lapidação de Piso Usinado — BC", href: "/lapidacao-piso-usinado-balneario-camboriu" },
-  { label: "Impermeabilização de Telhados — BC", href: "/impermeabilizacao-telhados-balneario-camboriu" },
-  { label: "Pintura Epoxi — BC", href: "/pintura-epoxi-balneario-camboriu" },
-  { label: "Tratamento de Decks — BC", href: "/tratamento-decks-balneario-camboriu" },
+  { label: "Impermeabilização de Pisos", href: "/impermeabilizacao-pisos-balneario-camboriu" },
+  { label: "Limpeza Pós-Obra", href: "/limpeza-pos-obra-balneario-camboriu" },
+  { label: "Lapidação de Piso Usinado", href: "/lapidacao-piso-usinado-balneario-camboriu" },
+  { label: "Impermeabilização de Telhados", href: "/impermeabilizacao-telhados-balneario-camboriu" },
+  { label: "Tratamento de Decks", href: "/tratamento-decks-balneario-camboriu" },
+  { label: "Pintura Epoxi", href: "/pintura-epoxi-balneario-camboriu" },
+  { label: "Limpeza de Piscinas", href: "/limpeza-piscinas-balneario-camboriu" },
+  { label: "Porcelanato e Áreas Externas", href: "/porcelanato-areas-externas-balneario-camboriu" },
 ]
 
 export default function Footer() {

@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function ServicePage({ page }: Props) {
-  const { service, city, h1, metaDescription, keywords } = page
+  const { service, city, h1, metaDescription } = page
 
   const schema = {
     "@context": "https://schema.org",
@@ -73,7 +73,7 @@ export default function ServicePage({ page }: Props) {
                 fontSize: 11,
                 letterSpacing: ".14em",
                 textTransform: "uppercase",
-                color: "var(--blue-l)",
+                color: "rgba(120,170,255,.9)",
               }}
             >
               {city.name} · {city.state}
@@ -89,16 +89,16 @@ export default function ServicePage({ page }: Props) {
             }}
           >
             <div>
-              <p className="eyebrow" style={{ marginBottom: 16 }}>
+              <p className="eyebrow" style={{ marginBottom: 16, color: "rgba(255,255,255,.5)" }}>
                 {city.name} · {city.state}
               </p>
-              <h1 className="h1" style={{ color: "var(--ice)", marginBottom: 24 }}>
+              <h1 className="h1" style={{ color: "#fff", marginBottom: 24 }}>
                 {h1}
               </h1>
               <p
                 style={{
                   fontSize: 17,
-                  color: "var(--soft)",
+                  color: "rgba(255,255,255,.72)",
                   maxWidth: 520,
                   lineHeight: 1.65,
                   marginBottom: 36,
@@ -110,7 +110,11 @@ export default function ServicePage({ page }: Props) {
                 <a href={waLink} target="_blank" rel="noopener" className="btn-primary">
                   Solicitar Orçamento Grátis
                 </a>
-                <a href={`tel:${site.phone.replace(/\D/g, "")}`} className="btn-outline">
+                <a
+                  href={`tel:${site.phone.replace(/\D/g, "")}`}
+                  className="btn-outline"
+                  style={{ color: "rgba(255,255,255,.85)", borderColor: "rgba(255,255,255,.25)" }}
+                >
                   {site.phone}
                 </a>
               </div>
@@ -266,27 +270,6 @@ export default function ServicePage({ page }: Props) {
                 e região
               </p>
 
-              <div className="label-mono" style={{ marginTop: 16, marginBottom: 10 }}>
-                Palavras-chave atendidas
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {keywords.map((kw) => (
-                  <span
-                    key={kw}
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 10,
-                      letterSpacing: ".1em",
-                      textTransform: "uppercase",
-                      color: "var(--mute)",
-                      border: "1px solid var(--border)",
-                      padding: "3px 8px",
-                    }}
-                  >
-                    {kw}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
