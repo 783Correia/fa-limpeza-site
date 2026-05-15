@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { headers } from "next/headers"
 import "./globals.css"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
@@ -82,7 +83,11 @@ const schemaOrg = [
   },
 ]
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers()
+  const pathname = headersList.get('x-pathname') ?? '/'
+  const isAdmin = pathname.startsWith('/admin')
+
   return (
     <html lang="pt-BR">
       <head>
@@ -98,10 +103,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <Header />
+        {!isAdmin && <Header />}
         <main>{children}</main>
-        <Footer />
-        <WhatsAppBtn />
+        {!isAdmin && <Footer />}
+        {!isAdmin && <WhatsAppBtn />}
       </body>
     </html>
   )

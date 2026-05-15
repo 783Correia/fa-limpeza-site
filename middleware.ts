@@ -11,9 +11,9 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  const response = NextResponse.next()
-  response.headers.set('x-next-pathname', pathname)
-  return response
+  const requestHeaders = new Headers(request.headers)
+  requestHeaders.set('x-pathname', pathname)
+  return NextResponse.next({ request: { headers: requestHeaders } })
 }
 
 export const config = {
