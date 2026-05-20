@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Restauração e Impermeabilização em Balneário Camboriú SC | FA Limpeza",
   description:
     "Especialistas em restauração técnica de pisos, telhados, decks e superfícies em Balneário Camboriú SC. Atendemos hotéis, condomínios e imóveis de alto padrão. Orçamento grátis.",
+  alternates: { canonical: "https://falimpezaprofissional.com.br/balneario-camboriu" },
 }
 
 const bcServices = services.filter((s) => s.cities.includes("balneario-camboriu"))

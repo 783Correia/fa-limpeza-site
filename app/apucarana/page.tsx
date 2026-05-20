@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Restauração e Impermeabilização em Apucarana PR | FA Limpeza",
   description:
     "Especialistas em restauração técnica de pisos, telhados e superfícies em Apucarana PR. Único serviço técnico especializado na região. Condomínios, empresas e construtoras. Orçamento grátis.",
+  alternates: { canonical: "https://falimpezaprofissional.com.br/apucarana" },
 }
 
 const apuServices = services.filter((s) => s.cities.includes("apucarana"))

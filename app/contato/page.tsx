@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contato | FA Limpeza Profissional — Balneário Camboriú e Apucarana",
   description:
     "Entre em contato com a FA Limpeza Profissional. Orçamento grátis para restauração e impermeabilização em Balneário Camboriú SC e Apucarana PR. Resposta em até 2 horas.",
+  alternates: { canonical: "https://falimpezaprofissional.com.br/contato" },
 }
 
 const canais = [

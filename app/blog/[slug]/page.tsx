@@ -7,7 +7,7 @@ import BlogPostContent from './content'
 
 export const dynamic = 'force-dynamic'
 
-const BASE_URL = 'https://falimpeza.com.br'
+const BASE_URL = 'https://falimpezaprofissional.com.br'
 
 interface Props {
   params: Promise<{ slug: string }>

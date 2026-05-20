@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Sobre a FA Limpeza Profissional | Restauração Técnica de Superfícies",
   description:
     "Conheça a FA Limpeza Profissional — especialistas em restauração e impermeabilização técnica de superfícies em Balneário Camboriú SC e Apucarana PR. Técnicos especializados, equipamentos profissionais.",
+  alternates: { canonical: "https://falimpezaprofissional.com.br/sobre" },
 }
 
 const diferenciais = [

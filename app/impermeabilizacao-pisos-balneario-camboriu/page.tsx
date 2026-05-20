@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: page.metaDescription,
   keywords: page.keywords.join(", "),
   alternates: {
-    canonical: "https://falimpeza.com.br/impermeabilizacao-pisos-balneario-camboriu",
+    canonical: "https://falimpezaprofissional.com.br/impermeabilizacao-pisos-balneario-camboriu",
   },
 }
 

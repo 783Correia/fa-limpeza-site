@@ -9,6 +9,9 @@ const page = servicePages.find(
 export const metadata: Metadata = {
   title: page.metaTitle,
   description: page.metaDescription,
+  alternates: {
+    canonical: "https://falimpezaprofissional.com.br/porcelanato-areas-externas-balneario-camboriu",
+  },
 }
 
 export default function Page() {

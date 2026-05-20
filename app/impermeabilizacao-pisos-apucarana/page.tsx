@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: page.metaDescription,
   keywords: page.keywords.join(", "),
   alternates: {
-    canonical: "https://falimpeza.com.br/impermeabilizacao-pisos-apucarana",
+    canonical: "https://falimpezaprofissional.com.br/impermeabilizacao-pisos-apucarana",
   },
 }
 
