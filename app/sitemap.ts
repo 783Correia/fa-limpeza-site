@@ -23,14 +23,18 @@ const serviceRoutes = [
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await sql`SELECT slug, updated_at FROM blog_posts WHERE published = true`
-
-  const blogEntries: MetadataRoute.Sitemap = posts.map((p) => ({
-    url: `${BASE}/blog/${p.slug}`,
-    lastModified: new Date(p.updated_at as string),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }))
+  let blogEntries: MetadataRoute.Sitemap = []
+  try {
+    const posts = await sql`SELECT slug, updated_at FROM blog_posts WHERE published = true`
+    blogEntries = posts.map((p) => ({
+      url: `${BASE}/blog/${p.slug}`,
+      lastModified: new Date(p.updated_at as string),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  } catch {
+    // banco indisponível — retorna só as rotas estáticas
+  }
 
   return [
     { url: BASE, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
