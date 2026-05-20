@@ -5,6 +5,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: '*', allow: '/', disallow: '/admin' },
     ],
-    sitemap: 'https://falimpeza.com.br/sitemap.xml',
+    sitemap: 'https://falimpezaprofissional.com.br/sitemap.xml',
   }
 }

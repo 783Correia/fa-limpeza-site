@@ -3,7 +3,7 @@ import { sql } from '@/lib/db'
 
 export const dynamic = 'force-dynamic'
 
-const BASE = 'https://falimpeza.com.br'
+const BASE = 'https://falimpezaprofissional.com.br'
 
 const serviceRoutes = [
   'impermeabilizacao-pisos-balneario-camboriu',

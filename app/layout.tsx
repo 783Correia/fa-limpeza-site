@@ -32,11 +32,11 @@ const schemaOrg = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://falimpeza.com.br/#bc",
+    "@id": "https://falimpezaprofissional.com.br/#bc",
     name: site.name,
     description: site.description,
     telephone: site.phone,
-    image: "https://falimpeza.com.br/og.jpg",
+    image: "https://falimpezaprofissional.com.br/og.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Balneário Camboriú",
@@ -44,7 +44,7 @@ const schemaOrg = [
       addressCountry: "BR",
     },
     geo: { "@type": "GeoCoordinates", latitude: -26.9927, longitude: -48.6352 },
-    url: "https://falimpeza.com.br",
+    url: "https://falimpezaprofissional.com.br",
     sameAs: [
       `https://instagram.com/${site.instagram}`,
       `https://facebook.com/${site.facebook}`,
@@ -68,7 +68,7 @@ const schemaOrg = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://falimpeza.com.br/#apucarana",
+    "@id": "https://falimpezaprofissional.com.br/#apucarana",
     name: site.name,
     description: site.description,
     telephone: site.phone,
@@ -79,7 +79,7 @@ const schemaOrg = [
       addressCountry: "BR",
     },
     geo: { "@type": "GeoCoordinates", latitude: -23.5505, longitude: -51.4608 },
-    url: "https://falimpeza.com.br",
+    url: "https://falimpezaprofissional.com.br",
   },
 ]
 

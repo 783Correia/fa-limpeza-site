@@ -4,8 +4,8 @@ export const site = {
   tagline: "SUPERFÍCIES QUE DURAM.",
   description:
     "Especialistas em restauração e impermeabilização técnica de pisos, telhados e decks para hotéis, condomínios e imóveis de alto padrão.",
-  phone: "(47) 98447-5665",
-  whatsapp: "5547984475665",
+  phone: "(43) 99635-4646",
+  whatsapp: "5543996354646",
   whatsappMsg: "Olá, gostaria de solicitar um orçamento.",
   instagram: "fa.limpezaprofissional",
   facebook: "falimpezaprofissional10",
