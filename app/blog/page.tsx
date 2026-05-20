@@ -20,8 +20,13 @@ function formatDate(dateStr: string) {
 }
 
 export default async function BlogPage() {
-  const rows = await sql`SELECT * FROM blog_posts WHERE published = true ORDER BY date DESC`
-  const typedPosts: BlogPost[] = rows as BlogPost[]
+  let typedPosts: BlogPost[] = []
+  try {
+    const rows = await sql`SELECT * FROM blog_posts WHERE published = true ORDER BY date DESC`
+    typedPosts = rows as BlogPost[]
+  } catch {
+    // DB indisponível — exibe lista vazia
+  }
 
   return (
     <main>

@@ -36,19 +36,19 @@ export default function Page() {
       >
         <div className="container">
           <nav style={{ marginBottom: 24, display: "flex", gap: 8, alignItems: "center" }}>
-            <Link href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "var(--mute)", textDecoration: "none" }}>
+            <Link href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", textDecoration: "none" }}>
               Início
             </Link>
-            <span style={{ color: "var(--mute)", fontSize: 11 }}>›</span>
+            <span style={{ color: "rgba(255,255,255,.3)", fontSize: 11 }}>›</span>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "var(--gold)" }}>
               Apucarana
             </span>
           </nav>
-          <p className="eyebrow" style={{ marginBottom: 16, color: "var(--gold)" }}>Apucarana · PR</p>
-          <h1 className="h1" style={{ color: "var(--ice)", marginBottom: 20, maxWidth: 700 }}>
+          <p className="eyebrow" style={{ marginBottom: 16, color: "rgba(212,160,23,.9)" }}>Apucarana · PR</p>
+          <h1 className="h1" style={{ color: "#fff", marginBottom: 20, maxWidth: 700 }}>
             Restauração Técnica de Superfícies em Apucarana
           </h1>
-          <p style={{ fontSize: 17, color: "var(--soft)", maxWidth: 560, lineHeight: 1.65, marginBottom: 36 }}>
+          <p style={{ fontSize: 17, color: "rgba(255,255,255,.72)", maxWidth: 560, lineHeight: 1.65, marginBottom: 36 }}>
             Único serviço especializado em restauração e impermeabilização técnica em Apucarana e região. Condomínios, construtoras e empresas comerciais.
           </p>
           <a href={waLink} target="_blank" rel="noopener" className="btn-primary">

@@ -41,19 +41,19 @@ export default function Page() {
       >
         <div className="container">
           <nav style={{ marginBottom: 24, display: "flex", gap: 8, alignItems: "center" }}>
-            <Link href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "var(--mute)", textDecoration: "none" }}>
+            <Link href="/" style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", textDecoration: "none" }}>
               Início
             </Link>
-            <span style={{ color: "var(--mute)", fontSize: 11 }}>›</span>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "var(--blue-l)" }}>
+            <span style={{ color: "rgba(255,255,255,.3)", fontSize: 11 }}>›</span>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(120,170,255,.9)" }}>
               Sobre
             </span>
           </nav>
-          <p className="eyebrow" style={{ marginBottom: 16 }}>Quem somos</p>
-          <h1 className="h1" style={{ color: "var(--ice)", marginBottom: 20, maxWidth: 700 }}>
+          <p className="eyebrow" style={{ marginBottom: 16, color: "rgba(255,255,255,.5)" }}>Quem somos</p>
+          <h1 className="h1" style={{ color: "#fff", marginBottom: 20, maxWidth: 700 }}>
             FA Limpeza Profissional
           </h1>
-          <p style={{ fontSize: 17, color: "var(--soft)", maxWidth: 580, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 17, color: "rgba(255,255,255,.72)", maxWidth: 580, lineHeight: 1.7 }}>
             Pisos, telhados e áreas externas para hotéis, condomínios e construtoras em Balneário Camboriú SC e Apucarana PR. Não fazemos limpeza doméstica — essa é a nossa especialidade.
           </p>
         </div>
